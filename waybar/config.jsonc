@@ -1,0 +1,172 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "spacing": 8,
+  "margin-top": 8,
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/apps",
+    "group/audio"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    // "mpd",
+    "group/general"
+  ],
+  // Modules configuration
+  "custom/apps": {
+    "format": "Apps ",
+    "on-click": "~/.config/app-launcher.sh",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  "group/general": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "custom/bluetooth",
+      "cpu",
+      "memory",
+      "battery",
+      "clock",
+      "custom/power"
+    ]
+  },
+  "custom/bluetooth": {
+    "format": "",
+    "on-click": "blueman-manager",
+    "tooltip-format": "Bluetooth Manager"
+  },
+  "cpu": {
+    "format": "{usage}% "
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "clock": {
+    "timezone": "Asia/Tokyo",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "  {essid}",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "/home/Genta/.local/bin/wifi-menu",
+    "tooltip-format": "Wifi Menu"
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/media",
+      "custom/track",
+      "custom/cava",
+      "pulseaudio"
+    ]
+  },
+  "custom/cava": {
+    "format": "{}",
+    "tooltip": false,
+    "exec": "/home/Genta/.config/waybar/cava.sh"
+  },
+  "custom/media": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": ""
+    },
+    "tooltip-format": "Open Spotify",
+    "on-click": "spotify-launcher 2> /dev/null" // Script in resources folder
+  },
+  "custom/track": {
+    "exec": "playerctl -a metadata -p spotify --format '{{artist}}/{{title}}'",
+    "interval": 2,
+    "max-length": 30
+  },
+  "pulseaudio": {
+    "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon} {format_source} ",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "󰂲 {icon}  {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": " {volume}% ",
+    "format-source-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰜟",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip-format": "Power Menu",
+    "on-click": "wlogout"
+  }
+}

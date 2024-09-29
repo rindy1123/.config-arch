@@ -1,0 +1,48 @@
+* {
+  bg: rgba(0, 0, 0, 0.7);
+  fg: #DDDDDD;
+  fg-alt: #FFFFFF;
+
+  background-color: rgba(0, 0, 0, 0);
+  text-color: @fg;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  spacing: 0;
+}
+
+window {
+  width: 45%;
+  background-color: @bg;
+  border-radius: 16px;
+}
+
+inputbar {
+  background-color: rgba(70, 70, 70, 0.6);
+  padding: 6px;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+prompt {
+  font: "Hack Nerd Font 14";
+}
+
+entry {
+  font: "Hack Nerd Font 14";
+}
+
+element {
+  padding: 6px;
+  text-color: @fg;
+  background-color: #FFFFFF00;
+}
+
+listview {
+  background-color: #FFFFFF00;
+}
+
+element selected {
+  text-color: @fg-alt;
+  background-color: SteelBlue;
+}

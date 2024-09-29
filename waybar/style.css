@@ -1,0 +1,164 @@
+* {
+    font-family: Hack Nerd Font;
+    font-size: 10px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces,
+#custom-apps,
+#network,
+#audio,
+#clock {
+  border-radius: 14px;
+}
+
+#custom-apps {
+  margin: 0 6px;
+  padding: 0 6px;
+  background-color: rgba(43, 48, 59, 0.7);
+}
+
+#general {
+  background-color: rgba(43, 48, 59, 0.7);
+  padding: 0 4px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+#cpu {
+  margin: 0 6px;
+}
+
+#memory {
+  margin: 0 6px;
+}
+
+#battery {
+  margin: 0 6px;
+}
+
+#workspaces {
+  background-color: rgba(43, 48, 59, 0.7);
+  padding-right: 4px
+}
+
+/** 
+ * Need to disable the hover effect 
+ * https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
+ */
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent;
+    border: transparent;
+    padding: 0 3px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#audio {
+    padding: 0 6px;
+    color: #FFFFFF;
+    background-color: rgba(43, 48, 59, 0.7);
+    border: 2px solid rgba(50, 250, 50, 0.7);
+}
+
+#custom-media {
+    color: #66cc99;
+    font-size: 14px;
+    padding-right: 8px;
+}
+
+#custom-track {
+    color: #66cc99;
+    margin-right: 4px;
+}
+
+#custom-cava {
+  margin: 0 10px 0 2px;
+  color: #FFFFFF;
+}
+
+
+#pulseaudio.muted {
+  color: red;
+}
+
+#custom-bluetooth {
+  font-size: 12px;
+  margin: 0 4px;
+}
+
+#network {
+  padding: 0 6px;
+  color: #FFFFFF;
+}
+
+#network.disconnected {
+  color: #f53c3c;
+}
+
+#clock {
+  padding: 0 6px;
+}
+
+#custom-power {
+  /* background-color: rgba(43, 48, 59, 0.7); */
+  /* padding-left: 6px; */
+  /* padding-right: 3px; */
+  /* border: 2px solid rgb(180, 10, 10); */
+  /* border-radius: 50%; */
+  margin-left: 6px;
+  margin-right: 4px;
+}
+
+
+
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+    padding: 0 10px;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}

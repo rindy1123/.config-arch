@@ -1,0 +1,9 @@
+configuration {
+  display-drun: " ";
+  drun-display-format: "{icon} {name}";
+  font: "FiraMono Nerd Font 12";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+@theme "/home/Genta/.config/rofi/theme.rasi"
