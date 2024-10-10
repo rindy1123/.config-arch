@@ -153,6 +153,11 @@ local plugin_list = {
     opts = {
       insert_at_end = true,
     },
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      opts = {},
+      dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    },
   },
 }
 lazy.setup(plugin_list)

@@ -28,7 +28,7 @@ draw_bold_text_with_bright_colors = true
   white = "#ECEFF4"
 
 [font]
-size = 9
+size = 8
 
   [font.normal]
   family = "Hack Nerd Font"
@@ -56,7 +56,7 @@ size = 9
 
 [window]
 decorations = "None"
-opacity = 0.75
+opacity = 0.8
 
   [window.padding]
   x = 2
@@ -69,11 +69,6 @@ multiplier = 10
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 save_to_clipboard = true
-
-[[keyboard.bindings]]
-key = "N"
-mods = "Control"
-action = "SpawnNewInstance"
 
 [shell]
 program = "/usr/bin/fish"
