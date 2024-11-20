@@ -11,6 +11,8 @@
 
 set $mod Mod4
 set $browser vivaldi-stable
+set $dim_in_seconds 300
+set $lock_in_seconds 300
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,7 +31,7 @@ font pango:Hack Nerd Font 10
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock.sh
+exec --no-startup-id xset s $dim_in_seconds $lock_in_seconds && xss-lock --transfer-sleep-lock -- ~/.config/i3lock.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -211,8 +213,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps
-gaps inner 14
-gaps outer 5
+gaps inner 10
+gaps outer 4
 
 default_border pixel 2
 client.focused #0e99cc #0e99cc #ffffff #285577

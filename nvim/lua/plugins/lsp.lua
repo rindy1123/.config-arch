@@ -2,6 +2,7 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 -- Don't forget to add the configuration to the end of the file
 local servers = {
+  "clangd",
   "gopls",
   "lua_ls",
   "rust_analyzer",
